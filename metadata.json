@@ -1,0 +1,6 @@
+{
+  "name": "Memorial dos Santos",
+  "description": "Aplicação pessoal de reflexão cristã, memória espiritual, oração e organização de sonhos e projetos inspirada em Josué 4 e 1 Samuel 7:12.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
