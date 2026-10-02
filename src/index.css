@@ -4,38 +4,52 @@
   --font-serif: "Cormorant Garamond", Georgia, Cambria, serif;
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
   
-  --color-ivory: #F4F0E7;
+  --color-ivory: #F5F2EB;
+  --color-sand: #EAE4D7;
   --color-sage: #879579;
-  --color-sage-dark: #6E7C61;
+  --color-sage-deep: #475344;
   --color-stone-gold: #B49A6A;
-  --color-stone-gold-dark: #9A8052;
-  --color-deep-forest: #383B32;
-  --color-sand-soft: #E5DECE;
-  --color-pure-white: #FFFFFF;
+  --color-stone-gold-dark: #937B4E;
+  --color-ink: #232521;
+  --color-charcoal: #363932;
+  --color-parchment: #FAF7F0;
 }
 
 @layer base {
   body {
-    background-color: #F4F0E7;
-    color: #383B32;
+    background-color: #F5F2EB;
+    color: #232521;
     font-family: var(--font-sans);
+    line-height: 1.65;
   }
 
-  h1, h2, h3, .font-display {
+  h1, h2, h3, h4, .font-display {
     font-family: var(--font-serif);
+    letter-spacing: -0.015em;
   }
 }
 
-/* Custom delicate scrollbar */
+/* Organic river stone shapes inspired by smoothed Jordan river pebbles */
+.stone-contour-1 {
+  border-radius: 28px 20px 32px 22px;
+}
+.stone-contour-2 {
+  border-radius: 22px 30px 20px 28px;
+}
+.stone-contour-3 {
+  border-radius: 30px 22px 26px 32px;
+}
+
+/* Custom delicate parchment scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4F0E7;
+  background: #F5F2EB;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D5CEBE;
+  background: #D9D2C3;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -55,3 +69,4 @@
     page-break-before: always;
   }
 }
+

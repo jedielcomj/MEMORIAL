@@ -292,20 +292,20 @@ export const JourneyPage: React.FC = () => {
       />
 
       {/* Intention Section (Page 02 from PDF) */}
-      <div className="bg-white/70 border border-[#E5DECE] rounded-2xl p-6 space-y-4">
+      <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-3xl p-6 sm:p-8 space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <span className="text-[11px] uppercase tracking-wider text-[#879579] font-semibold">
+            <span className="text-xs font-serif italic text-[#475344]">
               Antes de começar · Página 02
             </span>
-            <h3 className="font-serif text-lg text-[#383B32]">
+            <h3 className="font-serif text-xl text-[#232521] font-medium">
               Minha intenção para estes 90 dias
             </h3>
           </div>
           <SaveIndicator status={saveStatus} lastSavedTime={lastSavedTime} />
         </div>
 
-        <p className="text-xs sm:text-sm text-[#383B32]/75 font-serif italic">
+        <p className="text-xs sm:text-sm text-[#363932]/75 font-serif italic max-w-3xl leading-relaxed">
           “Separe um momento semanal para escrever. Não procure respostas perfeitas. Escreva com honestidade, ore enquanto escreve e permita que o memorial seja construído aos poucos.”
         </p>
 
@@ -315,13 +315,13 @@ export const JourneyPage: React.FC = () => {
             onChange={e => setIntention(e.target.value)}
             rows={3}
             placeholder="Qual é a sua oração e intenção para esta caminhada com Deus? O que você deseja lembrar, discernir ou construir?"
-            className="w-full p-4 rounded-xl bg-[#F4F0E7]/50 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none focus:border-[#B49A6A] transition-colors resize-y font-sans leading-relaxed"
+            className="w-full p-4 rounded-2xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none focus:border-[#B49A6A] transition-colors resize-y font-sans leading-relaxed"
           />
           <div className="flex justify-end">
             <button
               type="button"
               onClick={handleSaveIntention}
-              className="px-4 py-2 text-xs font-medium text-white bg-[#383B32] hover:bg-[#2A2C25] rounded-lg transition-colors cursor-pointer"
+              className="px-5 py-2 text-xs font-medium text-white bg-[#232521] hover:bg-[#363932] rounded-xl transition-colors cursor-pointer"
             >
               Salvar Intenção
             </button>
@@ -330,11 +330,11 @@ export const JourneyPage: React.FC = () => {
       </div>
 
       {/* 8 Movements Overview (Page 04 from PDF) */}
-      <div className="bg-[#E5DECE]/35 border border-[#D5CEBE]/70 rounded-2xl p-6">
-        <span className="text-[10px] uppercase tracking-widest text-[#383B32]/60 font-semibold block mb-2">
+      <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-3xl p-6">
+        <span className="text-xs font-serif italic text-[#475344] block mb-3">
           O Método do Memorial dos Santos · 8 Movimentos
         </span>
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2 text-center text-xs">
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 text-center text-xs">
           {[
             { num: '01', name: 'Lembrar', sub: 'O que Deus já fez?' },
             { num: '02', name: 'Reconhecer', sub: 'Onde estou agora?' },
@@ -345,10 +345,10 @@ export const JourneyPage: React.FC = () => {
             { num: '07', name: 'Orar', sub: 'O que entrego a Deus?' },
             { num: '08', name: 'Registrar', sub: 'Qual pedra guardar?' },
           ].map(m => (
-            <div key={m.num} className="bg-white/80 p-2.5 rounded-xl border border-[#E5DECE] flex flex-col justify-between">
+            <div key={m.num} className="bg-white p-3 rounded-2xl border border-[#EAE4D7] flex flex-col justify-between">
               <span className="font-mono text-[10px] text-[#B49A6A] font-semibold">{m.num}</span>
-              <span className="font-serif font-semibold text-[#383B32] text-xs my-0.5">{m.name}</span>
-              <span className="text-[9px] text-[#383B32]/65 font-sans leading-tight">{m.sub}</span>
+              <span className="font-serif font-medium text-[#232521] text-xs my-0.5">{m.name}</span>
+              <span className="text-[10px] text-[#363932]/70 font-sans leading-tight">{m.sub}</span>
             </div>
           ))}
         </div>

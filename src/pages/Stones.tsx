@@ -237,14 +237,14 @@ export const StonesPage: React.FC = () => {
       />
 
       {/* Tab Switcher: As Pedras vs De Onde Deus me Tirou */}
-      <div className="flex items-center gap-2 p-1 bg-[#E5DECE]/60 rounded-xl max-w-md">
+      <div className="flex items-center gap-2 p-1 bg-[#EAE4D7]/70 rounded-2xl max-w-md">
         <button
           type="button"
           onClick={() => setActiveTab('stones')}
-          className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`flex-1 py-2 px-4 rounded-xl text-xs font-sans font-medium transition-colors cursor-pointer ${
             activeTab === 'stones'
-              ? 'bg-white text-[#383B32] shadow-xs'
-              : 'text-[#383B32]/70 hover:text-[#383B32]'
+              ? 'bg-white text-[#232521] shadow-xs'
+              : 'text-[#232521]/70 hover:text-[#232521]'
           }`}
         >
           Minhas Pedras ({stones.length})
@@ -252,41 +252,41 @@ export const StonesPage: React.FC = () => {
         <button
           type="button"
           onClick={() => setActiveTab('origin')}
-          className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`flex-1 py-2 px-4 rounded-xl text-xs font-sans font-medium transition-colors cursor-pointer ${
             activeTab === 'origin'
-              ? 'bg-white text-[#383B32] shadow-xs'
-              : 'text-[#383B32]/70 hover:text-[#383B32]'
+              ? 'bg-white text-[#232521] shadow-xs'
+              : 'text-[#232521]/70 hover:text-[#232521]'
           }`}
         >
-          De Onde Deus me Tirou (Josué 4)
+          De Onde Deus me Tirou
         </button>
       </div>
 
       {activeTab === 'origin' ? (
         /* Section: De Onde Deus Me Tirou (Page 07 from PDF) */
-        <div className="bg-white/80 border border-[#E5DECE] rounded-2xl p-6 sm:p-8 space-y-6">
-          <div className="border-b border-[#E5DECE] pb-4">
-            <span className="text-[11px] uppercase tracking-wider font-semibold text-[#B49A6A]">
+        <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-3xl p-6 sm:p-10 space-y-6">
+          <div className="border-b border-[#EAE4D7] pb-4">
+            <span className="text-xs font-serif italic text-[#475344]">
               Josué 4 · Lembrar
             </span>
-            <h2 className="text-2xl font-serif text-[#383B32] mt-0.5">
+            <h2 className="text-2xl font-serif text-[#232521] font-medium mt-0.5">
               De Onde Deus me Tirou
             </h2>
-            <p className="text-sm font-serif italic text-[#383B32]/80 mt-1 leading-relaxed">
+            <p className="text-sm font-serif italic text-[#363932]/80 mt-1 leading-relaxed max-w-3xl">
               “Antes de escrever sobre aquilo que ainda quero conquistar, olhe para aquilo que já aconteceu. Em Josué 4, depois da travessia do Jordão, pedras foram retiradas do rio para formar um memorial. Este caderno assume essa imagem como prática: guardar aquilo que não queremos esquecer.”
             </p>
           </div>
 
           <div className="grid grid-cols-1 gap-5">
             {[
-              { key: 'q1', num: '01', label: 'O que existia na minha vida que ficou para trás?' },
-              { key: 'q2', num: '02', label: 'Que ciclos foram encerrados?' },
-              { key: 'q3', num: '03', label: 'Que situações Deus me ajudou a superar?' },
-              { key: 'q4', num: '04', label: 'Que versão de mim ficou pelo caminho?' },
-              { key: 'q5', num: '05', label: 'Que portas foram fechadas para que outras pudessem se abrir?' },
+              { key: 'q1', num: '1.', label: 'O que existia na minha vida que ficou para trás?' },
+              { key: 'q2', num: '2.', label: 'Que ciclos foram encerrados?' },
+              { key: 'q3', num: '3.', label: 'Que situações Deus me ajudou a superar?' },
+              { key: 'q4', num: '4.', label: 'Que versão de mim ficou pelo caminho?' },
+              { key: 'q5', num: '5.', label: 'Que portas foram fechadas para que outras pudessem se abrir?' },
             ].map(item => (
               <div key={item.key} className="space-y-1.5">
-                <label className="flex items-center gap-2 text-xs font-serif font-semibold text-[#383B32]">
+                <label className="flex items-center gap-2 text-xs font-serif font-medium text-[#232521]">
                   <span className="font-mono text-[#B49A6A]">{item.num}</span>
                   <span>{item.label}</span>
                 </label>
@@ -297,13 +297,13 @@ export const StonesPage: React.FC = () => {
                     setOriginAnswers({ ...originAnswers, [item.key]: e.target.value })
                   }
                   placeholder="Sua resposta sincera..."
-                  className="w-full px-3.5 py-2 rounded-lg bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none focus:border-[#B49A6A] font-sans"
+                  className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none focus:border-[#B49A6A] font-sans"
                 />
               </div>
             ))}
 
             <div className="space-y-1.5 pt-2">
-              <label className="text-xs font-serif font-semibold text-[#383B32] block">
+              <label className="text-xs font-serif font-medium text-[#232521] block">
                 Minha história (O relato de gratidão da travessia)
               </label>
               <textarea
@@ -311,17 +311,17 @@ export const StonesPage: React.FC = () => {
                 onChange={e => setOriginAnswers({ ...originAnswers, story: e.target.value })}
                 rows={5}
                 placeholder="Conte com suas palavras a história de onde Deus te tirou até o dia de hoje..."
-                className="w-full p-3.5 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none focus:border-[#B49A6A] font-sans leading-relaxed"
+                className="w-full p-4 rounded-2xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none focus:border-[#B49A6A] font-sans leading-relaxed"
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-between pt-4 border-t border-[#E5DECE]">
+          <div className="flex items-center justify-between pt-4 border-t border-[#EAE4D7]">
             <SaveIndicator status={originSaveStatus} />
             <button
               type="button"
               onClick={handleSaveOrigin}
-              className="px-5 py-2 text-xs font-medium text-white bg-[#383B32] hover:bg-[#2A2C25] rounded-xl transition-colors cursor-pointer"
+              className="px-6 py-2.5 text-xs font-medium text-white bg-[#232521] hover:bg-[#363932] rounded-xl transition-colors cursor-pointer"
             >
               Salvar Reflexão
             </button>
@@ -331,17 +331,17 @@ export const StonesPage: React.FC = () => {
         /* Section: Stones List & Filters */
         <div className="space-y-6">
           {/* Quick Category Templates from PDF */}
-          <div className="bg-[#E5DECE]/30 border border-[#D5CEBE]/70 rounded-2xl p-4 sm:p-5">
-            <span className="text-[11px] uppercase tracking-wider text-[#383B32]/60 font-semibold block mb-2.5">
-              Tipos de Pedras do Manual:
+          <div className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-3xl p-5 sm:p-6">
+            <span className="text-xs font-serif italic text-[#475344] block mb-3">
+              Categorias do Livro das Pedras:
             </span>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {CATEGORIES.map(cat => (
                 <button
                   key={cat}
                   type="button"
                   onClick={() => handleOpenCreate(cat)}
-                  className="text-xs px-2.5 py-1 rounded-lg bg-white/80 hover:bg-white text-[#383B32] border border-[#E5DECE] hover:border-[#B49A6A] transition-colors cursor-pointer flex items-center gap-1.5"
+                  className="text-xs px-3 py-1.5 rounded-xl bg-white hover:bg-[#FAF7F0] text-[#232521] border border-[#EAE4D7] hover:border-[#B49A6A] transition-colors cursor-pointer flex items-center gap-1.5"
                 >
                   <StoneIconSVG className="w-3.5 h-3.5 text-[#B49A6A]" />
                   <span>{cat}</span>
@@ -351,23 +351,23 @@ export const StonesPage: React.FC = () => {
           </div>
 
           {/* Search, Filter Bar */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white/70 border border-[#E5DECE] p-3 rounded-xl">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-[#FAF7F0] border border-[#EAE4D7] p-3 rounded-2xl">
             <div className="relative flex-1">
-              <Search className="w-4 h-4 text-[#383B32]/40 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-[#232521]/40 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
                 placeholder="Pesquisar pedras por título, relato ou aprendizado..."
-                className="w-full pl-9 pr-4 py-1.5 text-xs text-[#383B32] bg-transparent border-none focus:outline-none"
+                className="w-full pl-10 pr-4 py-2 text-xs text-[#232521] bg-transparent border-none focus:outline-none"
               />
             </div>
 
-            <div className="flex items-center gap-2 border-t sm:border-t-0 sm:border-l border-[#E5DECE] pt-2 sm:pt-0 sm:pl-3">
+            <div className="flex items-center gap-2 border-t sm:border-t-0 sm:border-l border-[#EAE4D7] pt-2 sm:pt-0 sm:pl-3">
               <select
                 value={selectedCategory}
                 onChange={e => setSelectedCategory(e.target.value)}
-                className="text-xs bg-[#F4F0E7]/60 border border-[#D5CEBE] rounded-lg px-2.5 py-1.5 text-[#383B32] focus:outline-none"
+                className="text-xs bg-white border border-[#D9D2C3] rounded-xl px-3 py-1.5 text-[#232521] focus:outline-none"
               >
                 <option value="all">Todas as categorias</option>
                 {CATEGORIES.map(cat => (
@@ -380,10 +380,10 @@ export const StonesPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setOnlyFavorites(prev => !prev)}
-                className={`p-1.5 rounded-lg border text-xs transition-colors cursor-pointer flex items-center gap-1 ${
+                className={`p-2 rounded-xl border text-xs transition-colors cursor-pointer flex items-center gap-1 ${
                   onlyFavorites
-                    ? 'bg-[#B49A6A] text-white border-[#9A8052]'
-                    : 'bg-white text-[#383B32]/70 border-[#D5CEBE] hover:text-[#383B32]'
+                    ? 'bg-[#B49A6A] text-white border-[#937B4E]'
+                    : 'bg-white text-[#232521]/70 border-[#D9D2C3] hover:text-[#232521]'
                 }`}
                 title="Mostrar apenas favoritas"
               >
@@ -394,22 +394,22 @@ export const StonesPage: React.FC = () => {
 
           {/* Stones Cards Grid */}
           {filteredStones.length === 0 ? (
-            <div className="text-center py-16 px-4 bg-white/50 border border-dashed border-[#D5CEBE] rounded-2xl space-y-4">
-              <div className="w-12 h-12 rounded-full bg-[#E5DECE]/50 flex items-center justify-center mx-auto text-[#B49A6A]">
+            <div className="text-center py-16 px-4 bg-[#FAF7F0]/60 border border-dashed border-[#D9D2C3] rounded-3xl space-y-4">
+              <div className="w-12 h-12 rounded-full bg-[#EAE4D7]/60 flex items-center justify-center mx-auto text-[#B49A6A]">
                 <StoneIconSVG className="w-6 h-6" />
               </div>
-              <h3 className="font-serif text-lg text-[#383B32]">
+              <h3 className="font-serif text-lg text-[#232521]">
                 {searchTerm || selectedCategory !== 'all' || onlyFavorites
                   ? 'Nenhuma pedra encontrada para este filtro.'
                   : 'Nenhuma pedra registrada ainda.'}
               </h3>
-              <p className="text-xs text-[#383B32]/70 font-serif italic max-w-md mx-auto">
+              <p className="text-xs text-[#363932]/70 font-serif italic max-w-md mx-auto">
                 “Toda conquista, aprendizado, livramento ou resposta significativa pode se tornar uma pedra.”
               </p>
               <button
                 type="button"
                 onClick={() => handleOpenCreate()}
-                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-[#383B32] hover:bg-[#2A2C25] rounded-xl transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-[#232521] hover:bg-[#363932] rounded-xl transition-colors cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 <span>Registrar primeira pedra</span>
@@ -417,102 +417,105 @@ export const StonesPage: React.FC = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-              {filteredStones.map(stone => (
-                <div
-                  key={stone.id}
-                  className="bg-white/85 border border-[#E5DECE] hover:border-[#B49A6A] rounded-2xl p-5 space-y-3.5 shadow-2xs transition-all relative group flex flex-col justify-between"
-                >
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between text-xs text-[#383B32]/60">
-                      <span className="font-serif italic font-medium text-[#B49A6A] bg-[#F4F0E7] px-2 py-0.5 rounded">
-                        {stone.category}
-                      </span>
-                      <div className="flex items-center gap-1 text-[#383B32]/50">
-                        <Calendar className="w-3 h-3" />
-                        <span>
-                          {stone.event_date
-                            ? new Date(stone.event_date + 'T00:00:00').toLocaleDateString('pt-BR')
-                            : new Date(stone.created_at).toLocaleDateString('pt-BR')}
+              {filteredStones.map((stone, sIdx) => {
+                const contourClass = sIdx % 3 === 0 ? 'stone-contour-1' : sIdx % 3 === 1 ? 'stone-contour-2' : 'stone-contour-3';
+                return (
+                  <div
+                    key={stone.id}
+                    className={`bg-white border border-[#EAE4D7] hover:border-[#B49A6A] p-6 space-y-4 shadow-2xs transition-all relative flex flex-col justify-between ${contourClass}`}
+                  >
+                    <div className="space-y-2.5">
+                      <div className="flex items-center justify-between text-xs text-[#363932]/60">
+                        <span className="font-serif italic font-medium text-[#B49A6A]">
+                          {stone.category}
                         </span>
+                        <div className="flex items-center gap-1 text-[#363932]/50">
+                          <Calendar className="w-3 h-3" />
+                          <span>
+                            {stone.event_date
+                              ? new Date(stone.event_date + 'T00:00:00').toLocaleDateString('pt-BR')
+                              : new Date(stone.created_at).toLocaleDateString('pt-BR')}
+                          </span>
+                        </div>
                       </div>
+
+                      <h3 className="font-serif text-xl text-[#232521] font-medium leading-snug">
+                        {stone.title}
+                      </h3>
+
+                      <p className="text-xs text-[#363932]/85 font-sans leading-relaxed whitespace-pre-wrap">
+                        {stone.story}
+                      </p>
+
+                      {/* Specific PDF questions answers if present */}
+                      {stone.personal_meaning && (
+                        <div className="pt-2 border-t border-[#EAE4D7]/70 text-xs">
+                          <span className="font-serif italic font-medium text-[#475344] block">
+                            O que isso significou:
+                          </span>
+                          <p className="text-[#363932]/80 mt-0.5">{stone.personal_meaning}</p>
+                        </div>
+                      )}
+
+                      {stone.lessons_learned && (
+                        <div className="pt-1.5 text-xs">
+                          <span className="font-serif italic font-medium text-[#475344] block">
+                            O que aprendi:
+                          </span>
+                          <p className="text-[#363932]/80 mt-0.5">{stone.lessons_learned}</p>
+                        </div>
+                      )}
+
+                      {stone.future_strength && (
+                        <div className="pt-1.5 text-xs">
+                          <span className="font-serif italic font-medium text-[#475344] block">
+                            Como fortalecerá no futuro:
+                          </span>
+                          <p className="text-[#363932]/80 mt-0.5">{stone.future_strength}</p>
+                        </div>
+                      )}
                     </div>
 
-                    <h3 className="font-serif text-lg text-[#383B32] font-semibold leading-snug">
-                      {stone.title}
-                    </h3>
-
-                    <p className="text-xs text-[#383B32]/85 font-sans leading-relaxed whitespace-pre-wrap">
-                      {stone.story}
-                    </p>
-
-                    {/* Specific PDF questions answers if present */}
-                    {stone.personal_meaning && (
-                      <div className="pt-2 border-t border-[#E5DECE]/60 text-xs">
-                        <span className="font-serif italic font-semibold text-[#879579] block">
-                          O que isso significou:
-                        </span>
-                        <p className="text-[#383B32]/80 mt-0.5">{stone.personal_meaning}</p>
-                      </div>
-                    )}
-
-                    {stone.lessons_learned && (
-                      <div className="pt-1.5 text-xs">
-                        <span className="font-serif italic font-semibold text-[#879579] block">
-                          O que aprendi:
-                        </span>
-                        <p className="text-[#383B32]/80 mt-0.5">{stone.lessons_learned}</p>
-                      </div>
-                    )}
-
-                    {stone.future_strength && (
-                      <div className="pt-1.5 text-xs">
-                        <span className="font-serif italic font-semibold text-[#879579] block">
-                          Como fortalecerá no futuro:
-                        </span>
-                        <p className="text-[#383B32]/80 mt-0.5">{stone.future_strength}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Actions footer */}
-                  <div className="flex items-center justify-between pt-3 border-t border-[#E5DECE] mt-2">
-                    <button
-                      type="button"
-                      onClick={() => handleToggleFavorite(stone)}
-                      className={`text-xs p-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1 ${
-                        stone.is_favorite
-                          ? 'text-[#B49A6A]'
-                          : 'text-[#383B32]/40 hover:text-[#B49A6A]'
-                      }`}
-                      title={stone.is_favorite ? 'Remover dos favoritos' : 'Favoritar pedra'}
-                    >
-                      <Star className={`w-4 h-4 ${stone.is_favorite ? 'fill-current' : ''}`} />
-                      <span className="text-[10px] font-sans">
-                        {stone.is_favorite ? 'Favorita' : ''}
-                      </span>
-                    </button>
-
-                    <div className="flex items-center gap-2">
+                    {/* Actions footer */}
+                    <div className="flex items-center justify-between pt-3 border-t border-[#EAE4D7] mt-3">
                       <button
                         type="button"
-                        onClick={() => handleOpenEdit(stone)}
-                        className="p-1.5 text-[#383B32]/60 hover:text-[#383B32] hover:bg-[#E5DECE]/60 rounded-lg transition-colors cursor-pointer"
-                        title="Editar pedra"
+                        onClick={() => handleToggleFavorite(stone)}
+                        className={`text-xs p-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1 ${
+                          stone.is_favorite
+                            ? 'text-[#B49A6A]'
+                            : 'text-[#232521]/40 hover:text-[#B49A6A]'
+                        }`}
+                        title={stone.is_favorite ? 'Remover dos favoritos' : 'Favoritar pedra'}
                       >
-                        <Edit3 className="w-3.5 h-3.5" />
+                        <Star className={`w-4 h-4 ${stone.is_favorite ? 'fill-current' : ''}`} />
+                        <span className="text-[10px] font-sans">
+                          {stone.is_favorite ? 'Favorita' : ''}
+                        </span>
                       </button>
-                      <button
-                        type="button"
-                        onClick={() => setDeleteTargetId(stone.id)}
-                        className="p-1.5 text-[#383B32]/60 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
-                        title="Excluir pedra"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => handleOpenEdit(stone)}
+                          className="p-1.5 text-[#232521]/60 hover:text-[#232521] hover:bg-[#EAE4D7]/50 rounded-lg transition-colors cursor-pointer"
+                          title="Editar pedra"
+                        >
+                          <Edit3 className="w-3.5 h-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setDeleteTargetId(stone.id)}
+                          className="p-1.5 text-[#232521]/50 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+                          title="Excluir pedra"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

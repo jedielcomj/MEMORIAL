@@ -25,7 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
 
   const primaryNav = [
     { label: 'Memorial', path: '/' },
-    { label: 'Jornada 90 Dias', path: '/jornada' },
+    { label: 'Jornada', path: '/jornada' },
     { label: 'Pedras', path: '/pedras' },
     { label: 'Mapa da Vida', path: '/mapa' },
     { label: 'Orações', path: '/oracoes' },
@@ -33,14 +33,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
   ];
 
   return (
-    <header className="sticky top-0 z-30 bg-[#F4F0E7]/95 backdrop-blur-md border-b border-[#E5DECE] px-4 sm:px-6 py-3 transition-colors">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Zone 1: Brand title, one line single text element */}
+    <header className="sticky top-0 z-30 bg-[#F5F2EB]/95 backdrop-blur-md border-b border-[#EAE4D7] px-4 sm:px-8 py-3.5 transition-colors">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-6">
+        {/* Zone 1: Single text element wordmark */}
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={onToggleSidebar}
-            className="md:hidden p-2 text-[#383B32] hover:bg-[#E5DECE]/60 rounded-lg transition-colors cursor-pointer"
+            className="md:hidden p-1.5 text-[#232521] hover:bg-[#EAE4D7]/70 rounded-lg transition-colors cursor-pointer"
             aria-label={isSidebarOpen ? 'Fechar menu' : 'Abrir menu'}
           >
             {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -48,22 +48,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
           
           <Link
             to="/"
-            className="text-xl sm:text-2xl font-serif font-medium text-[#383B32] tracking-tight hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="text-xl sm:text-2xl font-serif text-[#232521] font-medium tracking-tight hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             Memorial dos Santos
           </Link>
         </div>
 
-        {/* Zone 2: 4-6 clean text navigation links (desktop) */}
-        <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#383B32]/75">
+        {/* Zone 2: Clean unboxed text navigation links */}
+        <nav className="hidden lg:flex items-center gap-7 text-xs font-sans font-medium text-[#232521]/70">
           {primaryNav.map(item => {
             const isActive = location.pathname === item.path;
             return (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`transition-colors whitespace-nowrap hover:text-[#383B32] ${
-                  isActive ? 'text-[#383B32] font-semibold border-b-2 border-[#B49A6A] pb-0.5' : ''
+                className={`transition-colors whitespace-nowrap hover:text-[#232521] ${
+                  isActive ? 'text-[#232521] font-semibold border-b border-[#B49A6A] pb-0.5' : ''
                 }`}
               >
                 {item.label}
@@ -72,53 +72,42 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
           })}
         </nav>
 
-        {/* Zone 3: Primary actions & User profile */}
-        <div className="flex items-center gap-3">
-          {/* Storage status indicator (informative, subtle) */}
+        {/* Zone 3: Primary action & User presence */}
+        <div className="flex items-center gap-4">
           <Link
             to="/conta"
-            title={isSupabaseMode ? 'Supabase conectado com RLS' : 'Modo local ativo (Configurar nuvem)'}
-            className="hidden sm:flex items-center gap-1.5 text-xs text-[#383B32]/65 hover:text-[#383B32] transition-colors px-2 py-1 rounded bg-[#E5DECE]/50 border border-[#D5CEBE]/60"
+            className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[#232521]/60 hover:text-[#232521] transition-colors"
+            title="Armazenamento e sincronização"
           >
-            {isSupabaseMode ? (
-              <>
-                <ShieldCheck className="w-3.5 h-3.5 text-[#879579]" />
-                <span className="font-sans">Nuvem Supabase</span>
-              </>
-            ) : (
-              <>
-                <HardDrive className="w-3.5 h-3.5 text-[#B49A6A]" />
-                <span className="font-sans">Modo Local</span>
-              </>
-            )}
+            <span className={`w-1.5 h-1.5 rounded-full ${isSupabaseMode ? 'bg-emerald-600' : 'bg-[#B49A6A]'}`} />
+            <span>{isSupabaseMode ? 'Nuvem' : 'Local'}</span>
           </Link>
 
           {user ? (
             <div className="flex items-center gap-2">
               <Link
                 to="/conta"
-                className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-[#383B32] bg-[#E5DECE]/60 hover:bg-[#E5DECE] rounded-lg border border-[#D5CEBE] transition-colors"
-                title="Ver minha conta e configurações"
+                className="text-xs font-medium text-[#232521] hover:text-[#475344] transition-colors flex items-center gap-1.5"
               >
                 <UserIcon className="w-3.5 h-3.5 text-[#879579]" />
-                <span className="max-w-[100px] sm:max-w-[140px] truncate">{user.display_name}</span>
+                <span className="max-w-[120px] truncate">{user.display_name}</span>
               </Link>
               <button
                 type="button"
                 onClick={signOut}
                 title="Sair da conta"
-                className="p-1.5 text-[#383B32]/70 hover:text-red-700 hover:bg-[#E5DECE]/60 rounded-lg transition-colors cursor-pointer"
+                className="p-1.5 text-[#232521]/50 hover:text-red-700 transition-colors cursor-pointer"
                 aria-label="Sair"
               >
-                <LogOut className="w-4 h-4" />
+                <LogOut className="w-3.5 h-3.5" />
               </button>
             </div>
           ) : (
             <Link
               to="/entrar"
-              className="px-4 py-1.5 text-xs font-medium text-white bg-[#383B32] hover:bg-[#2A2C25] rounded-lg transition-colors shadow-xs whitespace-nowrap"
+              className="px-4 py-2 text-xs font-medium text-white bg-[#232521] hover:bg-[#363932] rounded-xl transition-colors shadow-xs whitespace-nowrap"
             >
-              Entrar / Criar Conta
+              Entrar
             </Link>
           )}
         </div>

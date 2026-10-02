@@ -262,14 +262,14 @@ export const ReviewsPage: React.FC = () => {
       />
 
       {/* Tabs */}
-      <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#E5DECE]/60 rounded-xl">
+      <div className="flex flex-wrap items-center gap-1.5 p-1 bg-[#EAE4D7]/70 rounded-2xl">
         <button
           type="button"
           onClick={() => setActiveTab('monthly')}
-          className={`py-1.5 px-3.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`py-2 px-4 rounded-xl text-xs font-sans font-medium transition-colors cursor-pointer ${
             activeTab === 'monthly'
-              ? 'bg-white text-[#383B32] shadow-xs'
-              : 'text-[#383B32]/75 hover:text-[#383B32]'
+              ? 'bg-white text-[#232521] shadow-xs'
+              : 'text-[#232521]/75 hover:text-[#232521]'
           }`}
         >
           Parte 7: Revisão Mensal
@@ -277,10 +277,10 @@ export const ReviewsPage: React.FC = () => {
         <button
           type="button"
           onClick={() => setActiveTab('annual')}
-          className={`py-1.5 px-3.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`py-2 px-4 rounded-xl text-xs font-sans font-medium transition-colors cursor-pointer ${
             activeTab === 'annual'
-              ? 'bg-white text-[#383B32] shadow-xs'
-              : 'text-[#383B32]/75 hover:text-[#383B32]'
+              ? 'bg-white text-[#232521] shadow-xs'
+              : 'text-[#232521]/75 hover:text-[#232521]'
           }`}
         >
           Parte 8: Revisão Anual
@@ -288,10 +288,10 @@ export const ReviewsPage: React.FC = () => {
         <button
           type="button"
           onClick={() => setActiveTab('jordan')}
-          className={`py-1.5 px-3.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`py-2 px-4 rounded-xl text-xs font-sans font-medium transition-colors cursor-pointer ${
             activeTab === 'jordan'
-              ? 'bg-white text-[#383B32] shadow-xs'
-              : 'text-[#383B32]/75 hover:text-[#383B32]'
+              ? 'bg-white text-[#232521] shadow-xs'
+              : 'text-[#232521]/75 hover:text-[#232521]'
           }`}
         >
           Parte 9: Quando o Novo Jordão Chegar
@@ -299,10 +299,10 @@ export const ReviewsPage: React.FC = () => {
         <button
           type="button"
           onClick={() => setActiveTab('yearStones')}
-          className={`py-1.5 px-3.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
+          className={`py-2 px-4 rounded-xl text-xs font-sans font-medium transition-colors cursor-pointer ${
             activeTab === 'yearStones'
-              ? 'bg-white text-[#383B32] shadow-xs'
-              : 'text-[#383B32]/75 hover:text-[#383B32]'
+              ? 'bg-white text-[#232521] shadow-xs'
+              : 'text-[#232521]/75 hover:text-[#232521]'
           }`}
         >
           Parte 10: Pedras do Ano (Pirâmide)
@@ -311,16 +311,16 @@ export const ReviewsPage: React.FC = () => {
 
       {/* TAB 1: REVISÃO MENSAL (Página 22) */}
       {activeTab === 'monthly' && (
-        <form onSubmit={handleSaveMonthly} className="bg-white/85 border border-[#E5DECE] rounded-2xl p-6 sm:p-8 space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5DECE] pb-4">
+        <form onSubmit={handleSaveMonthly} className="bg-[#FAF7F0] border border-[#EAE4D7] rounded-3xl p-6 sm:p-10 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#EAE4D7] pb-4">
             <div>
-              <span className="text-[11px] uppercase tracking-wider font-semibold text-[#879579]">
+              <span className="text-xs font-serif italic text-[#475344]">
                 Parte 7 · Revisão Mensal · Página 22
               </span>
-              <h2 className="text-2xl font-serif text-[#383B32] mt-0.5">
+              <h2 className="text-2xl font-serif text-[#232521] font-medium mt-0.5">
                 Revisão de {monthNames[selectedMonth - 1]} de {selectedYear}
               </h2>
-              <p className="text-xs font-serif italic text-[#383B32]/75 mt-0.5">
+              <p className="text-xs font-serif italic text-[#363932]/75 mt-0.5">
                 “Uma vez por mês, pare. Não para se cobrar. Para lembrar.”
               </p>
             </div>
@@ -329,7 +329,7 @@ export const ReviewsPage: React.FC = () => {
               <select
                 value={selectedMonth}
                 onChange={e => setSelectedMonth(Number(e.target.value))}
-                className="text-xs bg-[#F4F0E7] border border-[#D5CEBE] rounded-lg px-2.5 py-1.5 text-[#383B32]"
+                className="text-xs bg-white border border-[#D9D2C3] rounded-xl px-3 py-1.5 text-[#232521]"
               >
                 {monthNames.map((name, idx) => (
                   <option key={idx + 1} value={idx + 1}>
@@ -340,7 +340,7 @@ export const ReviewsPage: React.FC = () => {
               <select
                 value={selectedYear}
                 onChange={e => setSelectedYear(Number(e.target.value))}
-                className="text-xs bg-[#F4F0E7] border border-[#D5CEBE] rounded-lg px-2.5 py-1.5 text-[#383B32]"
+                className="text-xs bg-white border border-[#D9D2C3] rounded-xl px-3 py-1.5 text-[#232521]"
               >
                 {[currentYear, currentYear - 1, currentYear + 1].map(y => (
                   <option key={y} value={y}>
@@ -355,8 +355,8 @@ export const ReviewsPage: React.FC = () => {
           <div className="space-y-5">
             {/* 01 3 coisas pelas quais sou grato(a) */}
             <div className="space-y-1.5">
-              <label className="text-xs font-serif font-semibold text-[#383B32] flex items-center gap-2">
-                <span className="font-mono text-[#B49A6A]">01</span>
+              <label className="text-xs font-serif font-medium text-[#232521] flex items-center gap-2">
+                <span className="font-mono text-[#B49A6A]">1.</span>
                 <span>3 coisas pelas quais sou grato(a)</span>
               </label>
               <textarea
@@ -364,14 +364,14 @@ export const ReviewsPage: React.FC = () => {
                 value={monthlyForm.grateful_things}
                 onChange={e => setMonthlyForm({ ...monthlyForm, grateful_things: e.target.value })}
                 placeholder="1. ...&#10;2. ...&#10;3. ..."
-                className="w-full p-3 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none focus:border-[#B49A6A] font-sans"
+                className="w-full p-3.5 rounded-2xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none focus:border-[#B49A6A] font-sans"
               />
             </div>
 
             {/* 02 3 pedras que quero guardar */}
             <div className="space-y-1.5">
-              <label className="text-xs font-serif font-semibold text-[#383B32] flex items-center gap-2">
-                <span className="font-mono text-[#B49A6A]">02</span>
+              <label className="text-xs font-serif font-medium text-[#232521] flex items-center gap-2">
+                <span className="font-mono text-[#B49A6A]">2.</span>
                 <span>3 pedras que quero guardar</span>
               </label>
               <textarea
@@ -379,14 +379,14 @@ export const ReviewsPage: React.FC = () => {
                 value={monthlyForm.stones_to_keep}
                 onChange={e => setMonthlyForm({ ...monthlyForm, stones_to_keep: e.target.value })}
                 placeholder="1. ...&#10;2. ...&#10;3. ..."
-                className="w-full p-3 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none focus:border-[#B49A6A] font-sans"
+                className="w-full p-3.5 rounded-2xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none focus:border-[#B49A6A] font-sans"
               />
             </div>
 
             {/* 03 O que aprendi? */}
             <div className="space-y-1.5">
-              <label className="text-xs font-serif font-semibold text-[#383B32] flex items-center gap-2">
-                <span className="font-mono text-[#B49A6A]">03</span>
+              <label className="text-xs font-serif font-medium text-[#232521] flex items-center gap-2">
+                <span className="font-mono text-[#B49A6A]">3.</span>
                 <span>O que aprendi?</span>
               </label>
               <textarea
@@ -394,14 +394,14 @@ export const ReviewsPage: React.FC = () => {
                 value={monthlyForm.lessons_learned}
                 onChange={e => setMonthlyForm({ ...monthlyForm, lessons_learned: e.target.value })}
                 placeholder="Sobre Deus, sobre mim, sobre limites, sobre confiança..."
-                className="w-full p-3 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none font-sans"
+                className="w-full p-3.5 rounded-2xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none font-sans"
               />
             </div>
 
             {/* 04 O que não quero repetir? */}
             <div className="space-y-1.5">
-              <label className="text-xs font-serif font-semibold text-[#383B32] flex items-center gap-2">
-                <span className="font-mono text-[#B49A6A]">04</span>
+              <label className="text-xs font-serif font-medium text-[#232521] flex items-center gap-2">
+                <span className="font-mono text-[#B49A6A]">4.</span>
                 <span>O que não quero repetir?</span>
               </label>
               <input
@@ -409,14 +409,14 @@ export const ReviewsPage: React.FC = () => {
                 value={monthlyForm.avoid_repeating}
                 onChange={e => setMonthlyForm({ ...monthlyForm, avoid_repeating: e.target.value })}
                 placeholder="Erros, sobrecargas ou posturas a serem deixadas para trás..."
-                className="w-full px-3.5 py-2 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none font-sans"
+                className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none font-sans"
               />
             </div>
 
             {/* 05 O que precisa continuar? */}
             <div className="space-y-1.5">
-              <label className="text-xs font-serif font-semibold text-[#383B32] flex items-center gap-2">
-                <span className="font-mono text-[#B49A6A]">05</span>
+              <label className="text-xs font-serif font-medium text-[#232521] flex items-center gap-2">
+                <span className="font-mono text-[#B49A6A]">5.</span>
                 <span>O que precisa continuar?</span>
               </label>
               <input
@@ -424,14 +424,14 @@ export const ReviewsPage: React.FC = () => {
                 value={monthlyForm.keep_going}
                 onChange={e => setMonthlyForm({ ...monthlyForm, keep_going: e.target.value })}
                 placeholder="Bons hábitos, tempo com a família, constância devocional..."
-                className="w-full px-3.5 py-2 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none font-sans"
+                className="w-full px-4 py-2.5 rounded-xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none font-sans"
               />
             </div>
 
             {/* 06 Qual sonho avançou? Qual projeto precisa de atenção? */}
             <div className="space-y-1.5">
-              <label className="text-xs font-serif font-semibold text-[#383B32] flex items-center gap-2">
-                <span className="font-mono text-[#B49A6A]">06</span>
+              <label className="text-xs font-serif font-medium text-[#232521] flex items-center gap-2">
+                <span className="font-mono text-[#B49A6A]">6.</span>
                 <span>Qual sonho avançou? Qual projeto precisa de atenção?</span>
               </label>
               <textarea
@@ -439,15 +439,15 @@ export const ReviewsPage: React.FC = () => {
                 value={monthlyForm.dream_advanced}
                 onChange={e => setMonthlyForm({ ...monthlyForm, dream_advanced: e.target.value })}
                 placeholder="Avanço nos sonhos e projetos prioritários..."
-                className="w-full p-3 rounded-xl bg-[#F4F0E7]/40 border border-[#D5CEBE] text-sm text-[#383B32] focus:outline-none font-sans"
+                className="w-full p-3.5 rounded-2xl bg-white border border-[#D9D2C3] text-sm text-[#232521] focus:outline-none font-sans"
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-end pt-3 border-t border-[#E5DECE]">
+          <div className="flex items-center justify-end pt-3 border-t border-[#EAE4D7]">
             <button
               type="submit"
-              className="px-6 py-2.5 text-xs font-medium text-white bg-[#383B32] hover:bg-[#2A2C25] rounded-xl transition-colors cursor-pointer"
+              className="px-6 py-2.5 text-xs font-medium text-white bg-[#232521] hover:bg-[#363932] rounded-xl transition-colors cursor-pointer"
             >
               Salvar Revisão Mensal
             </button>
